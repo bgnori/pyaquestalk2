@@ -1,0 +1,52 @@
+pyaquestalk2
+============
+
+pyaquestalk2はLinux等で動作するAquesTalk2のPythonラッパーです。
+# Windowsでは別の作者によるラッパーをおすすめします。
+
+環境
+====
+Linux 32bit/64bit
+Python 2.6
+UTF-8
+
+必要なもの
+==========
+* AquesTalk2
+  Linux 32bit/64bit版を環境に合わせて選択してください。
+  http://www.a-quest.com/download/index.html
+
+* GCCコンパイラ
+
+インストール
+============
+* AquesTalk2
+root権限でライブラリをインストールします。
+cp libAquesTalk2.so.1.0 /usr/lib
+ln -sf /usr/lib/libAquesTalk2.so.1.0 /usr/lib/libAquesTalk2.so.1
+ln -sf /usr/lib/libAquesTalk2.so.1 /usr/lib/libAquesTalk2.so
+/sbin/ldconfig -n /usr/lib
+
+* pyaquestalk2 Pythonモジュール
+python setup.py build
+python setup.py test
+python setup.py install
+
+ライセンス
+==========
+AquesTalk2の全ての権利は株式会社アクエストが所有しています。
+同梱のAquesTalk2ライブラリは非営利の個人利用に限り無償で使用
+できます。それ以外のご利用の場合はライセンスの購入が必要です。
+また、AquesTalk2ライブラリ単体での再配布はできません。
+詳細は次のURLを参照してください。
+http://www.a-quest.com/products/aquestalk2_licence.html
+
+pyaquestalk2はGPLに従います。
+
+
+連絡先
+======
+メール kenbooing@gmail.com
+ウェブ http://com.nicovideo.jp/community/co475423
+
+2010/09/23
