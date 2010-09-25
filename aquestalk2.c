@@ -3,7 +3,7 @@
 #include "AquesTalk2.h"
 
 extern int synthe(const char*, int);
-void initaquestalk2(void);
+void init_aquestalk2(void);
 
 PyObject* aquestalk2_synthe(PyObject* self, PyObject* args)
 {
@@ -17,7 +17,7 @@ PyObject* aquestalk2_synthe(PyObject* self, PyObject* args)
       return NULL;
   wav = AquesTalk2_Synthe_Utf8(koe, speed, &size, NULL);
   if (wav == NULL) {
-    sprintf(buffer, "Aquestalk2 Error %d:", size);
+    sprintf(buffer, "Aquestalk2Error %d", size);
     PyErr_SetString(PyExc_ValueError, buffer);
     return NULL;
   }
@@ -31,7 +31,7 @@ static PyMethodDef aquestalk2_methods[] = {
   {NULL},
 };
 
-void initaquestalk2()
+void init_aquestalk2()
 {
-  Py_InitModule("aquestalk2", aquestalk2_methods);
+  Py_InitModule("_aquestalk2", aquestalk2_methods);
 }

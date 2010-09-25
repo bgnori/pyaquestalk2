@@ -4,12 +4,12 @@ from setuptools import setup, find_packages, Extension
 
 setup(
 	name='pyaquestalk2',
-	version='1.0.0',
+	version='1.1.0',
 	description='AquesTalk2 python binding',
 	author='kenboo',
 	author_email='kenbooing@gmail.com',
 	url='http://com.nicovideo.jp/community/co475423',
-	packages=find_packages(),
+	packages=find_packages(exclude=['tests']),
 	long_description = """\
 	This is a Python binding for AquesTalk2.
 	AquesTalk2 is a human voice synthesizer developed by
@@ -27,7 +27,7 @@ setup(
 	install_requires = [
 		'setuptools'
 	],
-	ext_modules=[Extension('aquestalk2',
+	ext_modules=[Extension('_aquestalk2',
                                ['aquestalk2.c'],
                                extra_link_args=['-lAquesTalk2'],
                                ),
